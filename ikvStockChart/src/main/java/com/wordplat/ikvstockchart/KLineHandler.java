@@ -1,25 +1,3 @@
-## Features
-    1.增加实时缩放，缩放点在两指之间
-    2.增加highlightStyle可以配置参数
-    3.增加折线图联动及其切换
-    4.增加高亮线聚焦
-    5.修复已知闪退bug
-
-
-
-
-
-## Screenshot
-
-![Screenshot_1529822985](Screenshots/Screenshot_1529822962.png)    ![Screenshot_1529822985](Screenshots/Screenshot_1529822985.png)    
-
-## fork
-
-原开源项目：[https://github.com/wordplat/ikvStockChart]
-
-## License
-
-```java
 /*
  * Copyright (C) 2017 WordPlat Open Source Project
  *
@@ -37,4 +15,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-```
+
+package com.wordplat.ikvstockchart;
+
+import android.view.MotionEvent;
+
+import com.wordplat.ikvstockchart.entry.Entry;
+
+/**
+ * <p>KLineHandler</p>
+ * <p>Date: 2017/3/22</p>
+ *
+ * @author afon
+ */
+
+public interface KLineHandler {
+
+    void onLeftRefresh();
+
+    void onRightRefresh();
+
+    void onSingleTap(MotionEvent e, float x, float y);
+
+    void onDoubleTap(MotionEvent e, float x, float y);
+
+    void onHighlight(Entry entry, int entryIndex, float x, float y);
+
+    void onCancelHighlight();
+}
